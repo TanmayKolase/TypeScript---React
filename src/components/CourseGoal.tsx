@@ -1,12 +1,14 @@
-import React from "react";
-
-const CourseGoal = () => {
+interface CourseGoalProps {
+  title: string;
+  description: string;
+}
+const CourseGoal = ({ title, description }: CourseGoalProps) => {
   return (
     <>
       <article>
         <div>
-          <h1>Title</h1>
-          <p>Description</p>
+          <h1>{title}</h1>
+          <p>{description}</p>
         </div>
         <button>Delete</button>
       </article>

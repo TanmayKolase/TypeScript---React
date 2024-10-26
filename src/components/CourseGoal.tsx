@@ -2,10 +2,12 @@ import { ReactNode } from "react";
 
 interface CourseGoalProps {
   title: string;
+  id: number;
   children: ReactNode;
+  onDelete: (id: number) => void;
 }
 
-const CourseGoal = ({ title, children }: CourseGoalProps) => {
+const CourseGoal = ({ title, id, children, onDelete }: CourseGoalProps) => {
   return (
     <>
       <article>
@@ -13,7 +15,7 @@ const CourseGoal = ({ title, children }: CourseGoalProps) => {
           <h1>{title}</h1>
           {children}
         </div>
-        <button>Delete</button>
+        <button onClick={() => onDelete(id)}>Delete</button>
       </article>
     </>
   );
